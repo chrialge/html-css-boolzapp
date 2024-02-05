@@ -10,13 +10,14 @@
     --boolzap-light: #dbdbd4;
     --boolzap-lighter: #ffffff;
     --boolzap-notification: #8edafc;
-
+    --boolzap-message-sent: #d5f9ba;
 }
 body{
     background-color: gray;
     font-family: 'Lato', sans-serif;
     overflow: hidden;
     padding: 20px 0;
+    margin: 0;
 }
 /* endregion common */
 
@@ -127,7 +128,7 @@ input[type="text"]{
 /* region contacts-left */
 .contacts{
     overflow-y: auto;
-    height: 77%;
+    height: 73%;
 
 }
 .contact{
@@ -204,7 +205,7 @@ input[type="text"]{
 
 /* region main-right */
 #site-main{
-    background-color: deeppink;
+    background-image: url(../img/mine.jpg);
     width: 100%;
     height: 85%;
     padding: 50px;
@@ -213,37 +214,74 @@ input[type="text"]{
 .container-messages{
     width: 100%;
     margin: 5px auto;
-    background-color: coral;
+
     height:100%;
     position: relative;
 
 }
 .message{
-    width: 300px;
-    height: 200px;
-    background-color: aqua;
+    padding: 20px 10px;
+    border-radius: 1rem;
+    max-width: 400px;
+    width: 80%;
+    display: flex;
+    position: relative;
+}
+.drowdown > a{
+    color: gray;
 }
 .message-sent{
     position: absolute;
     right: 0;
     top: 0;
+    background-color: var(--boolzap-message-sent);
 
 }
 .message-arrived{
     position: absolute;
     left: 0;
-    top: 230px;
+    top: 200px;
+    background-color: var(--boolzap-lighter);
+}
+.time-message{
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    color: gray;
 }
 /* endregion main-right */
 
 /* region footer-right */
 #site-footer{
-    background-color: green;
+    background-color: var(--boolzap-light);
     width: 100%;
     height: 11%;
     bottom: 0;
     left: 0;
     position: absolute;
+}
+.container-metodology-message{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+}
+.emonji > a, .vocal-message > a{
+    color: gray;
+    
+}
+.emonji > a > i, .vocal-message > a >i{
+    font-size: 25px;
+}
+.write-message{
+    flex-grow: 1;
+    border-radius: 1rem;
+}
+.write-message > input{
+    padding: 10px;
+    border-radius: 0.5rem;
 }
 /* endregion footer-right */
 
@@ -265,7 +303,10 @@ input[type="text"]{
         width: 100vw;
     }
     .contacts{
-        height: 86%;
+        height: 89%;
+    }
+    body{
+        padding: 0;
     }
 }
 /* endmedia query max-width 991px */
