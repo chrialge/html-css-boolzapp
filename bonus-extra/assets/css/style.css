@@ -339,13 +339,54 @@ body{
         height: 100%;
         gap: 1rem;
 
+
+
         & .emonji > a , .vocal-message > a{
             color: var(--boolzap-text-gray);
 
+            
             & i{
                 font-size: 25px;
             }
+
+            & i:hover{
+                font-size: 40px;
+                transition: 0.5s;
+            }
         }
+        
+        & .emonji > ul{
+            visibility: hidden;
+            top: -140px;
+            background-color: var(--boolzap-lighter);
+            width: 150px;
+            list-style: none;
+            flex-wrap: wrap;
+            padding: 5px;
+
+            & li{
+                width: calc((100% / 12) * 4);
+                padding: 5px;
+
+                & :hover{
+                    background-color: var(--boolzap-light);
+                }
+            }
+            & a{
+                text-decoration: none;
+                font-size: 25px;
+            }
+        }
+        & .emonji:hover ul{
+            visibility:visible ;
+        }
+        & .emonji > a:hover{
+            color: black;
+        }
+        & .vocal-message > a:hover{
+            color: red;
+        }
+
 
         & .write-message{
             flex-grow: 1;
