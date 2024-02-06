@@ -11,13 +11,14 @@
     --boolzap-lighter: #ffffff;
     --boolzap-notification: #8edafc;
     --boolzap-message-sent: #d5f9ba;
+    --boolzap-text-gray: gray;
 }
 body{
-    background-color: gray;
     font-family: 'Lato', sans-serif;
     overflow: hidden;
     padding: 20px 0;
-    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom,#009688 0%, #009688 120px, #eaeaea 120px, #eaeaea 100%);
 }
 /* endregion common */
 
@@ -29,6 +30,20 @@ body{
     height: 95vh;
     display: flex;
     position: relative;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+
+}
+.grow-1{
+    flex-grow: 1;
+}
+.posi-rela{
+    position: relative;
+}
+.posi-abso{
+    position: absolute;
 }
 /* endregion utilies */
 
@@ -47,8 +62,6 @@ body{
 .main-menu{
     background-color: var(--boolzap-light);
     padding: 10px 20px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     border-right: 1px solid gray;
 }
@@ -57,7 +70,7 @@ body{
     border-radius: 50%;
 }
 .option-main-menu > a {
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 .option-main-menu > a > i{
     font-size: 25px;
@@ -66,26 +79,24 @@ body{
 /* endregion main-menu-left */
 
 /* region notificasion-left */
-.notificasions{
-    background-color: #8edafc;
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
+.notificasionsn{
+    background-color: var(--boolzap-notification);
+    padding: 15px;
     gap: 1rem;
 }
 .symbol-no-notification{
     padding: 1rem;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--boolzap-lighter);
 }
 .symbol-no-notification > a{
-    color: #8edafc;
+    color: var(--boolzap-notification);
 }
 .symbol-no-notification > a > i{
     font-size: 20px;
 }
 .info-notification > a{
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 
 /* endregion notificasion-left */
@@ -100,9 +111,7 @@ body{
     width: 100%;
 }
 .text-search{
-    display: flex;
     width: 100%;
-    align-items: center;
     height: 40px;
     gap: 1rem;
     background-color: var(--boolzap-lighter);
@@ -114,7 +123,7 @@ body{
 }
 .btn-search > button{
     border: none;
-    background-color: white;
+    background-color: var(--boolzap-lighter);
     padding-left: 5px;
     cursor: pointer;
 }
@@ -128,15 +137,12 @@ input[type="text"]{
 /* region contacts-left */
 .contacts{
     overflow-y: auto;
-    height: 73%;
+    height: calc(100% - 205px);
 
 }
 .contact{
-    display: flex;
     width: 100%;
     padding: 10px;
-    position: relative;
-    align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--boolzap-light);
 }
@@ -145,13 +151,12 @@ input[type="text"]{
     border-radius: 50%;
 }
 .contact-info > span{
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 .time{
-    position: absolute;
     top: 10px;
     right: 10px;
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 /* end region contacts-left */
 
@@ -162,8 +167,6 @@ input[type="text"]{
 .right{
     width: 100%;
     height: 100%;
-    background-color: yellow;
-    position: relative;
 }
 
 /* region header-right */
@@ -174,15 +177,10 @@ input[type="text"]{
 }
 .container-header{
     padding: 5px 0;
-    display: flex;
     margin: auto;
     width: 95%;
-    align-items: center;
 }
 .left-header{
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
     gap: 1rem;
 }
 .image-header > img{
@@ -191,11 +189,10 @@ input[type="text"]{
 }
 
 .right-header{
-    flex-grow: 1;
     text-align: end;
 }
 .right-header > a{
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 .right-header > a > i{
     font-size: 20px;
@@ -207,17 +204,15 @@ input[type="text"]{
 #site-main{
     background-image: url(../img/mine.jpg);
     width: 100%;
-    height: 85%;
+    height: calc(100% - 164px);
     padding: 50px;
     overflow-y: auto;
 }
 .container-messages{
     width: 100%;
     margin: 5px auto;
-
-    height:100%;
-    position: relative;
-
+    display: flex;
+    flex-direction: column;
 }
 .message{
     padding: 20px 10px;
@@ -225,29 +220,23 @@ input[type="text"]{
     max-width: 400px;
     width: 80%;
     display: flex;
-    position: relative;
+    margin: 10px 0;
 }
 .drowdown > a{
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 .message-sent{
-    position: absolute;
-    right: 0;
-    top: 0;
     background-color: var(--boolzap-message-sent);
-
+    align-self: flex-end;
 }
 .message-arrived{
-    position: absolute;
-    left: 0;
-    top: 200px;
     background-color: var(--boolzap-lighter);
+    align-self: flex-start;
 }
 .time-message{
-    position: absolute;
     right: 5px;
     bottom: 10px;
-    color: gray;
+    color: var(--boolzap-text-gray);
 }
 /* endregion main-right */
 
@@ -255,7 +244,7 @@ input[type="text"]{
 #site-footer{
     background-color: var(--boolzap-light);
     width: 100%;
-    height: 11%;
+    height: 90px;
     bottom: 0;
     left: 0;
     position: absolute;
@@ -263,20 +252,17 @@ input[type="text"]{
 .container-metodology-message{
     width: 95%;
     margin: auto;
-    display: flex;
-    align-items: center;
     height: 100%;
     gap: 1rem;
 }
 .emonji > a, .vocal-message > a{
-    color: gray;
+    color: var(--boolzap-text-gray);
     
 }
 .emonji > a > i, .vocal-message > a >i{
     font-size: 25px;
 }
 .write-message{
-    flex-grow: 1;
     border-radius: 1rem;
 }
 .write-message > input{
@@ -289,7 +275,7 @@ input[type="text"]{
 
 /* media query max-width 991px */
 @media  screen and (max-width: 991px) {
-    .notificasions, .search, .option-main-menu, .contact-info{
+    .notificasionsn, .search, .option-main-menu, .contact-info{
         display: none;
     }
     .contact-image{
@@ -303,7 +289,7 @@ input[type="text"]{
         width: 100vw;
     }
     .contacts{
-        height: 89%;
+        height: calc(100% - 74px);
     }
     body{
         padding: 0;
