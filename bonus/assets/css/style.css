@@ -132,6 +132,10 @@ input[type="text"]{
     width: 100%;
     height: 40px;
     border: none;
+
+    &:focus-visible {
+        outline: none;
+    }
 }
 /* endregion search-left */
 
@@ -300,6 +304,10 @@ input[type="text"]{
 .write-message > input{
     padding: 10px;
     border-radius: 0.5rem;
+
+    &:focus-visible{
+        outline: none;
+    }
 }
 /* endregion footer-right */
 
