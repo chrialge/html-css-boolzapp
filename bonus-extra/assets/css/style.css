@@ -139,10 +139,14 @@ body{
                     border: none; 
                 }
             }
-            & input[type="text"]{
+            & input[type="search"]{
                 width: 100%;
                 height: 40px;
                 border: none;
+            
+                &:focus-visible{
+                    outline: none;
+                }
             }
         }
     }
@@ -395,6 +399,11 @@ body{
                 padding: 10px;
                 border-radius: 0.5rem;
                 width: 100%;
+                border: none;
+            
+                &:focus-visible{
+                    outline: none;
+                }
             }
         }
     }
