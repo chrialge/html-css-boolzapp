@@ -142,7 +142,7 @@ input[type="search"]{
 /* region contacts-left */
 .contacts{
     overflow-y: auto;
-    height: calc(100% - 205px);
+    height: calc(100% - 206px);
 
 }
 .contact{
@@ -342,9 +342,14 @@ input[type="search"]{
 /* media query max-width 540px */
 @media  screen and (max-width: 540px) {
     
-    .left, .emonji, .vocal-message{
+    
+    .left,
+    .vocal-message,
+    .emonji,
+    .right-header {
         display: none;
     }
+    
     .write-message > input{
         border-radius: 0.25rem;
     }
